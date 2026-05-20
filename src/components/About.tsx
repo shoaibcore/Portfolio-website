@@ -6,9 +6,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          Final-year Computer Engineering student at Presidency University with hands-on experience building full-stack web applications and IoT systems. Proficient in the MERN stack, REST API design, and real-time data integration. Seeking a backend or full-stack engineering role where I can contribute to scalable, impactful products.
         </p>
       </div>
     </div>

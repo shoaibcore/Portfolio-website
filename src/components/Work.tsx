@@ -53,21 +53,43 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[...Array(6)].map((_value, index) => (
-            <div className="work-box" key={index}>
+          {[
+            {
+              id: "01",
+              title: "EduNexus",
+              category: "Academic Engagement Platform",
+              tools: "MongoDB, Node.js, Express.js, React.js, Tailwind CSS, Postman, JWT",
+              image: "/images/edunexus.png"
+            },
+            {
+              id: "02",
+              title: "RFID-Based Laundry",
+              category: "IoT Linen Tracking System",
+              tools: "ESP32, RFID (RC522), Firebase, Flask, HTML/CSS, Chart.js",
+              image: "/images/rfid_laundry.png"
+            },
+            {
+              id: "03",
+              title: "Full-Stack Job Portal",
+              category: "Role-Based Placements Portal",
+              tools: "React.js, Node.js, MongoDB, JWT, RESTful APIs, CRUD",
+              image: "/images/job_portal.png"
+            }
+          ].map((project) => (
+            <div className="work-box" key={project.id}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>0{index + 1}</h3>
+                  <h3>{project.id}</h3>
 
                   <div>
-                    <h4>Project Name</h4>
-                    <p>Category</p>
+                    <h4>{project.title}</h4>
+                    <p>{project.category}</p>
                   </div>
                 </div>
                 <h4>Tools and features</h4>
-                <p>Javascript, TypeScript, React, Threejs</p>
+                <p>{project.tools}</p>
               </div>
-              <WorkImage image="/images/placeholder.webp" alt="" />
+              <WorkImage image={project.image} alt={project.title} />
             </div>
           ))}
         </div>

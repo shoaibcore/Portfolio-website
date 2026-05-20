@@ -46,24 +46,31 @@ const Loading = ({ percent }: { percent: number }) => {
     <>
       <div className="loading-header">
         <a href="/#" className="loader-title" data-cursor="disable">
-          Logo
+          S. ASHRAF
         </a>
-        <div className={`loaderGame ${clicked && "loader-out"}`}>
-          <div className="loaderGame-container">
-            <div className="loaderGame-in">
-              {[...Array(27)].map((_, index) => (
-                <div className="loaderGame-line" key={index}></div>
-              ))}
+        <div className={`loader-visualizer ${clicked && "visualizer-out"}`}>
+          <div className="orbital-container">
+            <div className="orbital-ring ring-1">
+              <div className="orbital-dot dot-1"></div>
             </div>
-            <div className="loaderGame-ball"></div>
+            <div className="orbital-ring ring-2">
+              <div className="orbital-dot dot-2"></div>
+            </div>
+            <div className="orbital-ring ring-3">
+              <div className="orbital-dot dot-3"></div>
+            </div>
           </div>
         </div>
       </div>
       <div className="loading-screen">
         <div className="loading-marquee">
-          <Marquee>
-            <span> A Creative Developer</span> <span>A Creative Designer</span>
-            <span> A Creative Developer</span> <span>A Creative Designer</span>
+          <Marquee speed={60}>
+            <span>Software Developer</span>
+            <span>Full-Stack Developer</span>
+            <span>Software Developer</span>
+            <span>Full-Stack Developer</span>
+            <span>Software Developer</span>
+            <span>Full-Stack Developer</span>
           </Marquee>
         </div>
         <div
@@ -73,6 +80,26 @@ const Loading = ({ percent }: { percent: number }) => {
           <div className="loading-hover"></div>
           <div className={`loading-button ${loaded && "loading-complete"}`}>
             <div className="loading-container">
+              <div className="progress-ring-svg">
+                <svg width="100%" height="100%" viewBox="0 0 100 100">
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="47"
+                    className="progress-ring-bg"
+                  />
+                  <circle
+                    cx="50"
+                    cy="50"
+                    r="47"
+                    className="progress-ring-fill"
+                    style={{
+                      strokeDasharray: "295.3",
+                      strokeDashoffset: `${295.3 - (295.3 * Math.min(percent, 100)) / 100}`,
+                    }}
+                  />
+                </svg>
+              </div>
               <div className="loading-content">
                 <div className="loading-content-in">
                   Loading <span>{percent}%</span>
